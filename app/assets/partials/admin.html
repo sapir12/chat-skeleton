@@ -1,0 +1,42 @@
+<style type="text/css">ul{float: left;}</style>
+<h1 class="main_title">Agents</h1>
+<!--<mr-chat-manager ng-model="chatManagerData"/>-->
+<div class="container" ng-controller="AdminCtrl" ng-init="init()">
+  <div class="row">
+    <ul class="card-panel collection with-header col s4">
+      <li class="collection-header">
+        <h5>My Supporters</h5>
+      </li>
+      <div ng-repeat="supporter in mySupporters">
+        <li ng-click="setSupporter(supporter.id)" id="{{supporter.id}}">
+          {{supporter.name}}
+        </li>
+      </div>
+    </ul>
+
+
+    <ul ng-show="showSupporter" class="card-panel collection">
+      <li>{{currentSupporter.name}}</li>
+      <div ng-repeat="supporter in currentSupporter.chats"> <!-- | limitTo:1 -->
+        <li ng-click="setChat(supporter.conversation)">{{supporter.time}}</li>
+       <!--  <div ng-repeat="chat in supporter.chats">
+          <li ng-click="setChat(chat.conversation)">{{chat.date}} hi</li>
+        </div> -->
+        </div>
+      </div>
+    </ul>
+
+    <div ng-show="showChat" class="col s9">
+      <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="row valign-wrapper" style="margin-bottom: 0;">
+          <div class="input-field col s10 materialize-textarea ng-pristine ng-untouched ng-valid" cols="30" rows="10">
+            <div ng-repeat="textInfo in currentChat">
+              <p>{{textInfo.time}} {{textInfo.name}}: {{textInfo.text}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

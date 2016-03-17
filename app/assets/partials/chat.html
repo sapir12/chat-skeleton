@@ -1,0 +1,99 @@
+<!--Text color adjustment--><style type="text/css">
+  .active{
+    color: #ccc;
+  }
+  .userLeft{
+    background-color: rgba(140, 10, 10);
+  }
+  .newConversation{
+    background-color: rgba(10, 140, 10); 
+  }
+  .newMessage{
+    background-color: rgba(10, 10, 140); 
+  }
+</style>
+
+<div>
+  <h1>Chat</h1><span class="icon-glass"></span>
+  <div ng-init="chat.init()">
+  <h4>currently {{chat.status}}</h4>
+  [<a href="" ng-click="chat.goOnline()">go {{chat.goStatus}}</a>]
+  [<a href="" ng-click="chat.clear()">clear</a>]
+      <div class="row">
+        
+        <div class="col s3">
+          <ul class="card-panel collection with-header">
+            <li class="collection-header">
+              <h5>Active Chats</h5>
+            </li>
+            <a ng-repeat="thisConv in chat.conversations" href="#!" id="{{thisConv.channel}}" class="collection-item" ng-click="clickedChatroom(thisConv.channel)" ng-class="{active: thisConv == chat.activeChat, userLeft: thisConv.userLeft, newConversation: thisConv.newConversation, newMessage: thisConv.unreadMessage}">
+              <span class="exit-user" ng-show="thisConv.newConversation">
+                <div class="inside-text-user">
+                  <b>New conversation!</b>
+                </div>
+              </span>
+              <span class="exit-user" ng-show="thisConv.userLeft">
+                <div class="inside-text-user">
+                  <b>User left</b>
+                </div>
+              </span>
+              <span class="exit-user" ng-show="thisConv.unreadMessage">
+                <div class="inside-text-user">
+                  <b>unread message!</b>
+                </div>
+              </span>
+              <span class="exit-user" ng-click="chat.setActiveChat(thisConv.channel)">
+                <div class="inside-text-user">
+                  {{thisConv.minute}}
+                </div>
+              </span>
+              <span class="exit-user" ng-click="chat.removeChat(thisConv.channel)">
+                <div class="inside-text-user">
+                  x
+                </div>
+              </span>
+              <span class="exit-user" ng-click="chat.banChat(thisConv.channel)">
+                <div class="inside-text-user">
+                  BAN
+                </div>
+              </span>
+            </a>
+          </ul>
+        </div>
+
+        <div class="col s9">
+          <div class="chat-player-container card-panel white" ng-repeat="message in chat.activeChat.specificConversation">
+            
+            <div class="card-panel grey lighten-5 z-depth-1">
+              <div class="row valign-wrapper">
+                <div class="col s1">
+                  <img src="images/user.png" alt="" class="circle responsive-img">
+                  <!-- notice the "circle" class -->
+                </div>
+                <div class="col s11">
+                  <span class="black-text">
+                    <strong>{{message.minute}} {{message.name}}:</strong>
+                    {{message.text}} 
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        
+        </div>
+
+      <!-- </div>
+      <div class="row">
+        <ul ng-repeat="message in chat.chat" class="collection col s10">
+          <li>{{message.text}}</li>
+        </ul>
+      </div> -->
+      <form class="form-inline" role="form" ng-submit="chat.send(chat.activeChat.channel, chat.taskText)">
+          <div class="form-group">
+              <input ng-disabled="!chat.allowInput" type="text" ng-model="chat.taskText" class="form-control" placeholder="type your message" autofocus>
+          </div>
+          <button type="submit" class="btn btn-primary">send</button>
+      </form>
+  </div>
+</div>

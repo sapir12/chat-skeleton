@@ -1,0 +1,134 @@
+body {
+    padding: 70px 5px 0;
+}
+#list-header{
+	position: relative;
+	width: 220px;
+	height: 44px;
+	left: 601px;
+	margin-bottom: -44px;
+	text-align: center;
+	top: -20px;
+}
+#managerSend{
+	width: 100px;
+	position: absolute;
+	height: 44px;
+}
+#users-list{
+	font-size: 13px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: relative;
+	border: solid;
+	width: 220px;
+	height: 380px;
+	left: 601px;
+	margin-bottom: -380px;
+	.users-infi{
+		min-width: 20000px;
+	}
+	.users-item{
+		cursor: pointer;
+		margin-bottom: 15px;
+		padding: 0px;
+		height: 10px;
+	}
+}
+#send{
+	width: 100px;
+	position: absolute;
+	height: 44px;
+}
+#userinput{
+	width: 500px;
+}
+.bold{
+	font-weight: bold;
+}
+.font_indie{
+	font-family: 'Indie Flower', cursive;
+}
+.font_tangarine{
+	font-family: 'Tangerine', cursive;
+}
+.checked{
+	background-color: rgba(70, 15, 85, 0.4);
+}
+.main_title{
+	margin-top: -8px;
+	font-family: 'Tangerine', cursive;
+}
+.exit-btn{
+	position: relative;
+	left: -15px;
+	cursor: pointer;
+	display: inline;
+	*display:inline;
+	width: 11px;
+	height: 11px;
+	border: solid;
+	border-width: 1px;
+	margin-right: -5px;
+	float: left;
+	background-color: white;
+}
+.exit-btn:hover{
+	color:rgba(180,0,0,0.5);
+}
+.exit-btn:active{
+	color:rgba(180,0,0,0.85);
+}
+.exit-user{
+	position: relative;
+	top: -22px;
+	cursor: pointer;
+	width: 11px;
+	height: 11px;
+	border: solid;
+	border-width: 1px;
+	margin-right: -5px;
+	float: left;
+	left: 186px;
+	background-color: white;
+}
+.exit-user:hover{
+	color:rgba(180,0,0,0.5);
+}
+.exit-user:active{
+	color:rgba(180,0,0,0.85);
+}
+.inside-text{
+	position: relative;
+	top: -6px;
+	left: 1px;
+	float: left;
+}
+.inside-text-user{
+	position: relative;
+	top: -4px;
+	left: 1px;
+	float: left;
+}
+.users-list-color{
+	color: rgb(190, 22, 70);
+}
+.chat-item{
+	display: inline;
+	*display:inline;
+}
+.donetrue {
+    text-decoration: line-through;
+}
+.chatWindow{
+	width: 600px;
+	height: 380px;
+	border: solid;
+	overflow: auto;
+}
+.red{
+	color: rgb(130, 12, 30);
+}
+.blue{
+	color: rgb(7, 20, 140);
+}

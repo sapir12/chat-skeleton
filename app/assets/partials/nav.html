@@ -1,0 +1,41 @@
+<header ng-controller="NavCtrl" ng-init="init()">
+    <nav id="products" class="z-depth-1">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="" ng-click="goHome()" class="brand-logo"><img src="images/upper.png" />Mr. Booster</a>
+          <ul id="nav-mobile" class="right side-nav">
+            <!-- <li class="active product-chat">
+              <a href="#"><i class="mdi-communication-chat left"></i>Chat</a>
+            </li> -->
+            <!-- <li class="product-newsletter">
+              <a href="#"><i class="mdi-communication-email left"></i>Newsletter</a>
+            </li>
+            <li class="product-sms">
+              <a href="#"><i class="mdi-communication-textsms left"></i>SMS</a>
+            </li>
+            <li class="product-toolbar">
+              <a href="#"><i class="mdi-image-wb-irradescent left"></i>Magic Toolbar</a>
+            </li> -->
+          </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </div>
+      </div>
+    </nav>
+    <div class="tabs-wrapper product-chat">
+      <div class="row z-depth-1" style="top: 0px;">
+        <div class="container">
+          <ul class="tabs" style="width: 100%;">
+            <li class="tab" style="width: 20%;"><a href="" ng-click="goSupport()" class="">Operator</a>
+            </li>
+            <li class="tab" style="width: 20%;"><a href="" ng-click="goProfile()">Settings</a>
+            </li>
+            <li class="tab" style="width: 20%;"><a href="" ng-click="goAdmin()" ng-show="isAdmin">All Time</a>
+            </li>
+            <li class="tab" style="width: 20%;"><a href="" ng-click="goLive()" ng-show="isAdmin">Live</a>
+            </li>
+            <li class="tab" style="width: 20%;"><a href="" ng-click="logout()">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>

@@ -1,0 +1,117 @@
+$chat: #4285F4;
+
+body{
+  background: #eee;
+}
+
+.container {
+  width: 100%;
+}
+
+.heading-section{
+  background: #4474C5;
+  padding-top: 15px;
+  color: #fff;
+  padding-bottom: 3px;
+  margin-bottom: 25px;
+}
+
+nav#products{
+  height: 115px;
+  line-height: 115px;
+  background-color: #333;
+  position: relative;
+
+  ul{
+    //margin-left: 160px;
+  }
+
+  a{
+    padding: 0px 20px;
+    font-size: 1.25rem;
+    color: #ccc;
+
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    transition: color 0.5s;
+  }
+
+  .active a{
+    color: #fff;
+  }
+
+  a:hover{
+    color: #fff;
+  }
+
+  .nav-wrapper i{
+    position: relative;
+    top: 25px;
+  }
+
+  .product-chat.active{
+    background: $chat;
+  }
+}
+
+nav#products a.brand-logo{
+  font-size: 2.5em;
+  font-weight: 200;
+  padding-left: 135px;
+
+  img{
+    position: absolute;
+    height: 135px;
+    left: 0;
+  }
+}
+
+.tabs-wrapper{
+  position: relative;
+  line-height: 60px;
+  height: 60px;
+  z-index: 10;
+
+  .row{
+    background: transparent;
+    // padding-left: 185px;
+  }
+
+  ul.tabs{
+    line-height: 60px;
+    height: 60px;
+
+    background: transparent;
+
+    li.tab{
+      line-height: 60px;
+      height: 60px;
+
+      background: transparent;
+    }
+  }
+
+  &.product-chat{
+    background: $chat;
+
+    ul.tabs li.tab a{
+      color: #dadada;
+    }
+
+    ul.tabs li.tab:hover a, ul.tabs li.tab a.active{
+      color: #fff;
+    }
+
+    .indicator{
+      background: #fff;
+    }
+  }
+}
+
+.chat-player-container{
+  background: #fff;
+
+  .row{
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,21 @@
+<h1 class="main_title">Profile</h1>
+<!--<mr-chat-manager ng-model="chatManagerData"/>-->
+<div class="container" ng-controller="ProfileCtrl" ng-init="show()">
+  <div class="row">
+
+    <div class="col s9">
+      <ul class="card-panel collection with-header">
+        <li class="collection-header">
+          <p class="form-control">Email: <span class="form-control">{{myEmail}}</span><span><input type="text" ng-model="newEmail" ng-show="isShowEditable" placeholder="new email"></span></p>
+          <p class="form-control">Name: <span class="form-control">{{myName}}</span><span><input type="text" ng-model="newName" ng-show="isShowEditable" placeholder="new name"></span></p>
+        </li>
+        <p>
+          <button ng-click="turnEditable()" type="button" class="btn waves-effect waves-light btn-small">{{edit}}</button>
+          <button ng-click="update()" type="button" class="btn waves-effect waves-light btn-small" ng-show="isShowEditable">Save</button>
+        </p>
+      </ul>
+    </div>
+
+  </div>
+
+</div>

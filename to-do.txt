@@ -1,0 +1,25 @@
+User
+	belongs to an Account
+	Account has many domains
+	Each domain has a KEY that the client uses to send chats to it
+
+Account
+	-name (Idan's)
+	search users by account (getUsers())
+ 	search domains by account (getDomains())
+
+Domains
+	-url (idantoys.com, idancars.com)
+	-random generated key (generateKey() generates and saves, this happens on creation or by user request)
+		usdlfihdiuhfosfd78yuyisdfkjbhsfdkhbjsdbjhkf
+	key: 'usdlfihdiuhfosfd78yuyisdfkjbhsfdkhbjsdbjhkf'
+
+	-on the frontend change the client to use domain key
+	-each chat is connected to a domain. user only sees incoming chats of his account&domains
+	a domain belongs to an account
+
+	req.user
+	req.user.account  (ObjectId)
+	req.user.account.domains
+
+	User.find({}).populate({path: 'account', schema: 'Account'})
